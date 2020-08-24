@@ -1,0 +1,46 @@
+int val=0;
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  val= analogRead(1);
+  float c=(val-102)/2;
+  Serial.print("temp");
+  delay(100);
+    
+  if(c<=15){
+    
+    digitalWrite(5,HIGH);
+  
+  }else {
+    digitalWrite(5,LOW);
+  }
+  
+  if(c>=16&&c<=29){
+    
+    digitalWrite(4,HIGH);
+  
+  }else {
+    digitalWrite(4,LOW);
+  }
+  
+  if(c>=30&&c<=49){
+    
+    digitalWrite(3,HIGH);
+  
+  }else {
+    digitalWrite(3,LOW);
+  }
+  
+  if(c>=50){
+    
+    digitalWrite(2,HIGH);
+  
+  }else {
+    digitalWrite(2,LOW);
+  }
+  
+}

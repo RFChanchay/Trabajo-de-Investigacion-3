@@ -1,0 +1,27 @@
+//declaracion de pines
+int lrojo=6;//led rojo
+int lverde=5;//led verde
+int pir=2;//pin del sensor pir
+int lectura;//variable para leer el sensor
+
+void setup()
+{
+    pinMode(lrojo,OUTPUT);
+    pinMode(lverde,OUTPUT);
+    pinMode(pir,INPUT);
+}
+
+void loop()
+{
+lectura=digitalRead(pir);//lectura del sensor
+if (lectura==HIGH)//caso de movimiento detectado
+{
+    digitalWrite(lrojo,HIGH);
+    digitalWrite(lverde,LOW);
+}else//caso de no deteccion de movimiento
+{
+    digitalWrite(lrojo,LOW);
+    digitalWrite(lverde,HIGH);
+}
+
+}

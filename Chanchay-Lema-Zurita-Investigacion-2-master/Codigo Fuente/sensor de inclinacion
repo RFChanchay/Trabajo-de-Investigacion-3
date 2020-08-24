@@ -1,0 +1,26 @@
+//Declaracion de variables
+int sensor=3;//PIN 3 SENSOR
+int diodoRojo=2 ;//PIN DEL DIODO ROJO
+int diodoVerde=1;//PIN DEL DIODO VERDE
+
+void setup()
+{
+  //configuracion de pines
+	pinMode(sensor,INPUT);//sensor como entrada
+    pinMode(diodoRojo,OUTPUT);//diodos como salidas
+    pinMode(diodoVerde,OUTPUT);
+}
+
+void loop()
+{
+
+	if (digitalRead(sensor)==LOW)//caso de nivel recto
+    {
+        digitalWrite(diodoVerde,HIGH);
+        digitalWrite(diodoRojo,LOW);
+    }else
+    {
+        digitalWrite(diodoVerde,LOW);// caso de inclinacion
+        digitalWrite(diodoRojo,HIGH);
+    }
+}
